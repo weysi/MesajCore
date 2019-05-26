@@ -1,0 +1,13 @@
+﻿<form method="post" asp-controller="home" asp-action="MesajGonder">
+    <select name="AliciId" class="form-control" required>
+        <option value="">Kişi seçiniz...</option>
+        @foreach (Person item in ViewBag.Kisiler)
+        {
+            <option value="@item.Id">@item.UserName</option>
+        }
+    </select>
+
+    <textarea name="Yazi" class="form-control" placeholder="Mesajınız..." required></textarea>
+
+    <button class="btn btn-primary">Gönder</button>
+</form>
